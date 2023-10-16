@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA API</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media-queries.css">
+    <script src="https://kit.fontawesome.com/316cb9933a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+    
+    <header>
+        <h1>NASA API Playground</h1>
+        <nav>
+        </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <main>
+        <section class="astonomy-picture" id="astronomy-picture">
+            <h2> Astronomy picture of the day</h2>
+            <article id="main-picture">
+                <div class="loading-spinner-container">     
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                </div>
+            </article>
+        </section>
+
+        <!-- dati da marte  -->
+        <div id="mars-today">
+            <h2>Curiosity data</h2>
+            
+            <div class="loading-spinner-container loading">     
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                </div>
+            <canvas id="myChart">
+               
+                    
+                </canvas> 
+                 
+            
+        </div>
+      
+        <article class="previus-images" id="previus-images">
+            <h2>Previus images</h2>
+            <section class="pictures-container">
+                <div class="loading-spinner-container loading">     
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner"></div>
+                </div>
+            </section>  
+        </article>
+        
+        <!-- MODALE -->
+       <div class="picture-details-container"> 
+       <!-- <span class="arrow arrow-next">
+            <i class="fa-solid fa-chevron-right" style="color: #fafafa;"></i>
+       </span> 
+       <span class="arrow arrow-back">
+            <i class="fa-solid fa-chevron-left" style="color: #fafafa;"></i>
+       </span>  -->
+    </div>
+    </main>
+</body>
+</html>

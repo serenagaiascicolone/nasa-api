@@ -1,0 +1,63 @@
+
+
+@media (min-width: 1200px) { 
+  
+    header nav {
+        position: static;
+        width: 50%;
+        height: 100%;
+        bottom: 100%;
+        display: block;
+    }
+
+    header h1 {
+        padding-left: 1rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+
+    /* MAIN */
+   .previus-images h2, .astonomy-picture h2, #mars-today h2  {
+        text-align: start;
+        padding-left: 2rem;
+    }
+    #main-picture {
+        flex-direction: row;
+    }
+
+    #main-picture img {
+        max-width: 50%;
+    }
+    .text-container {
+        margin-right: 1.5rem ;   
+    }
+
+    .text-container h3 {
+    text-align: start;
+    }
+
+    /*MODALE*/
+
+    .picture-details {
+    flex-direction: row;
+    }
+
+    .picture-details div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        position: static;
+        background-color: transparent;
+        width: 80%;
+        
+        transition: 0s;
+    }
+    
+}
+
+
+ 

@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+@import './loading-spinner.css';
+
+
+:root {
+    --primary-color: #030A8C; 
+    --secondary-color: rgba(4, 63, 140, 0.9);
+    --line-color: #F22F1D;
+    --line-color-light: #e2b0ac;
+    --background-color: #F2F2F2;
+    --background-color-secondary: #043f8c1f;
+    --text-color:#0D0D0D; 
+    --text-color-trasparent:rgba(13, 13, 13, 0.3); 
+}
+*::-webkit-scrollbar {
+	background-color: transparent;
+	width: 12px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin:0;
+    padding: 0;
+    font-family: 'Kosugi Maru', sans-serif;
+    background-color: var(--background-color-secondary);
+}
+
+/*HEADER*/
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 1rem;
+    color: var(--background-color);
+    align-items: center;
+    width: 100%;
+    z-index: 100;
+
+}
+
+header h1 {
+    letter-spacing: 0.3rem;
+}
+
+header nav {
+    position: fixed;
+    width: 100vw;
+    height: 10px;
+    bottom: 100%;
+    overflow: hidden;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    left: 0;
+}
+
+/*classe show aggiunta con javascript a nav*/
+.show {
+    height: 100vh;
+    bottom: 0;
+}
+
+
+header nav a {
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: var(--line-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hamburger {
+    margin: 0;
+    width: 2em;
+    height: 1.5em;
+    z-index: 3;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.1rem;
+    right: 10%;
+    padding: 0;
+    font-family: 'Kosugi Maru', sans-serif;
+   
+}
+
+
+.hamburger:hover {
+    cursor: pointer;
+}
+.hamburger span {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 70%;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 9999px;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+    width: 100%;
+}
+
+.hamburger span:nth-child(2) {
+    top: 10px;
+    width: 100%;
+}
+
+.hamburger span:nth-child(3) {
+    top: 20px;
+    width: 100%;
+}
+
+/*ANIMAZIONE HAMBURGER*/
+.hamburger span {
+    transition: all 0.35s cubic-bezier(.215, .61, .355, 1);
+}
+
+.hamburger.open {
+    transform: rotate(180deg);
+}
+.hamburger.open span:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2){
+   opacity: 0;
+}
+
+.hamburger.open span:nth-child(3){
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/*MAIN*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; */
+}
+
+/*CARD CON IMMAGINE DEL GIORNO E TESTO*/
+.astonomy-picture {
+    max-width: 100%;
+    color: var(--text-color);
+    
+}
+
+
+.previus-images h2, .astonomy-picture h2, #mars-today h2  {
+    text-transform: uppercase;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: var(--background-color-secondary);
+    text-align: center;
+    margin-top: 5rem;
+}
+
+
+
+#main-picture, .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* padding: 2rem 1rem; */
+    padding: 2rem 1rem 0 1rem ;
+    text-align: justify;
+    /* padding-bottom: 0; */
+}
+
+
+
+#main-picture {
+    margin-left: 1.5rem;
+}
+
+
+#main-picture img {
+    object-fit: cover;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.text-container {
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+
+}
+.text-container h3 {
+   text-align: center;
+
+}
+
+
+.text-container p:nth-child(2){
+    line-height: 1.2rem;
+    margin-bottom: auto;
+}
+
+
+/* CURIOSITY DATA  */
+
+
+#mars-today h4, #mars-today p {
+    background-color: var(--background-color);
+    padding: 0.5rem 1rem;
+}
+
+#myChart {
+    padding-bottom: 2rem;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+
+
+
+
+/*IMMAGINI PRECEDENTI*/
+
+
+.pictures-container {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.picture-container {
+    flex: 0 0 25%;
+    /* max-height: 300px; */
+    display: flex;
+}
+
+.picture-container img {
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+
+}
+
+.picture-container img:hover {
+    cursor:pointer;
+    filter: brightness(50%);
+}
+
+/*MODALE*/
+.picture-details-container {
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: none ;
+    
+}
+
+.picture-details {
+   
+    width: 80%;
+    max-height: 80vh;
+    flex-shrink: 0;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: 20px;
+    box-sizing: border-box;
+    
+}
+
+
+.picture-details img {
+    width: 80%;
+    max-height: 60vh;
+    object-fit: cover;
+}
+
+.picture-details div h3 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.picture-details div p {
+    text-align: justify;
+}
+
+
+
+.picture-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+overflow-y: auto; 
+
+    width: 100%;
+    transition: .5s;
+    
+
+}  
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+
+.picture-details-container span {
+    padding: 1rem;
+    border-radius: 20px;
+    color: var(--background-color);
+}
+
+
+.picture-details-container span:hover {
+    cursor: pointer;
+    background-color: var(--text-color-trasparent);
+}
